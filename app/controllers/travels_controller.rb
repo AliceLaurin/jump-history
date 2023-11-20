@@ -1,4 +1,6 @@
 class TravelsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show, :index]
+
   def index
     @travels = Travel.all
   end
