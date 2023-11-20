@@ -1,8 +1,14 @@
 <h1>Notre offre de voyage ! </h1>
   <ul>
     <% @travels.each do |travel| %>
-    <li>
-      <%= travel.name %>
-    </li>
+      <%= cl_image_tag travel.picture.key, height: 300, width: 400, crop: :fill %>
+      <li><%= travel.name %></li>
+      <li><%= travel.period %></li>
+      <li><%= travel.description %> /li>
+      <li><%= travel.price %>€</li>
+      <li><%= travel.number_of_travelers %> travelers</li>
+      <li> Perilousness :  <%= travel.perilousness %>/5</li>
+      <li><%= travel.duration %> days</li>
+
     <% end %>
 </ul>
