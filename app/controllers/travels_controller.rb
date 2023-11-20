@@ -7,7 +7,6 @@ class TravelsController < ApplicationController
     @travel = Travel.new
   end
 
-
   def create
     @travel = Travel.new(params_travel)
     @travel.user_id = current_user.id
@@ -16,6 +15,10 @@ class TravelsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def show
+    @travel = Travel.find(params[:id])
   end
 
   private

@@ -2,7 +2,7 @@
 
 <%= simple_form_for(@travel) do |f| %>
     <%= f.input :name %>
-    <%= f.input :picture %>
+    <%= f.input :picture, as: :file %>
     <%= f.input :address %>
     <%= f.input :period %>
     <%= f.input :perilousness %>
