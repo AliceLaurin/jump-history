@@ -1,0 +1,14 @@
+<h1>Créer un nouveau voyage dans le temps</h1>
+
+<%= simple_form_for(@travel) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :picture, as: :file %>
+    <%= f.input :address %>
+    <%= f.input :period %>
+    <%= f.input :perilousness %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :duration %>
+    <%= f.input :number_of_travelers %>
+    <%= f.submit%>
+  <% end %>

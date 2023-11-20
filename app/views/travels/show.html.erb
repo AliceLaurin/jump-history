@@ -1,0 +1,13 @@
+<h1> <%= @travel.name %> </h1>
+
+<%= cl_image_tag @travel.picture.key, height: 300, width: 400, crop: :fill %>
+
+<ul>
+  <li> address :  <%= @travel.address %> </li>
+  <li> period :  <%= @travel.period %> </li>
+  <li> perilousness :  <%= @travel.perilousness %> </li>
+  <li> description :  <%= @travel.description %> </li>
+  <li> price :  <%= @travel.price %>€ </li>
+  <li> duration :  <%= @travel.price %> days </li>
+  <li> number_of_travelers :  <%= @travel.price %> </li>
+</ul>
