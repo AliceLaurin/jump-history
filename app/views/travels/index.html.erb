@@ -1,0 +1,8 @@
+<h1>Notre offre de voyage ! </h1>
+  <ul>
+    <% @travels.each do |travel| %>
+    <li>
+      <%= travel.name %>
+    </li>
+    <% end %>
+</ul>
