@@ -1,22 +1,22 @@
 <h1>Notre offre de voyage ! </h1>
-<div class="d-flex flex-wrap">
-  <% @travels.each do |travel| %>
-        <div class="card" style="width: 18rem;">
-          <%= cl_image_tag travel.picture.key, height: 300, width: 400, crop: :fill, class: "card-img-top" %>
-          <div class="card-body">
-            <h5 class="card-title"><%= travel.name %></h5>
-            <p class="card-text"><%= travel.description %></p>
-          </div>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><%= travel.period %></li>
-            <li class="list-group-item"><%= travel.price %>€</li>
-            <li class="list-group-item"><%= travel.perilousness %>/10</li>
-            <li class="list-group-item"><%= travel.number_of_travelers %> travelers</li>
-            <li class="list-group-item"><%= travel.duration %> days </li>
-          </ul>
-          <div class="card-body">
-            <%= link_to "Booker ce voyage",  new_travel_booking_path(travel, @booking)%>
-          </div>
-        </div>
-    <% end %>
+<div id = "container-travels-index">
+  <div class="col-6">
+    <div class="card">
+      <% @travels.each do |travel| %>
+      <%= cl_image_tag travel.picture.key, height: 300, width: 400, crop: :fill, class: "card-img-top" %>
+      <div class="card-body">
+        <h5 class="card-title"><%= travel.name %></h5>
+        <p class="card-text"><%= travel.description %></p>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= travel.period %></li>
+          <li class="list-group-item">prix <%= travel.price %>€</li>
+          <li class="list-group-item">perilousness <%= travel.perilousness %>/10</li>
+          <li class="list-group-item"><%= travel.number_of_travelers %> travelers</li>
+          <li class="list-group-item"><%= travel.duration %> days </li>
+        </ul>
+        <%= link_to "Booker ce voyage",  new_travel_booking_path(travel, @booking), class: "btn-card"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
