@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+
   before_action :set_travel, only: %i[new create edit update]
 
   def new
@@ -11,7 +12,7 @@ class BookingsController < ApplicationController
     @user_id = @travel.user_id
     @booking.user_id = current_user.id
     if @booking.save
-      redirect_to travels_path
+      redirect_to dashboard_path
       # à modifier plus tard
     else
       render :new, status: :unprocessable_entity
@@ -26,6 +27,7 @@ class BookingsController < ApplicationController
     raise
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
+
     redirect_to dashboard_path
   end
 
@@ -37,5 +39,4 @@ class BookingsController < ApplicationController
   def set_travel
     @travel = Travel.find(params[:travel_id])
   end
-
 end

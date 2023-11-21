@@ -1,14 +1,21 @@
 <h1>Notre offre de voyage ! </h1>
-  <ul>
-    <% @travels.each do |travel| %>
-      <%= cl_image_tag travel.picture.key, height: 300, width: 400, crop: :fill %>
-      <li><%= travel.name %></li>
-      <li><%= travel.period %></li>
-      <li><%= travel.description %> /li>
-      <li><%= travel.price %>€</li>
-      <li><%= travel.number_of_travelers %> travelers</li>
-      <li> Perilousness :  <%= travel.perilousness %>/5</li>
-      <li><%= travel.duration %> days</li>
-
+<div class="d-flex flex-wrap">
+  <% @travels.each do |travel| %>
+        <div class="card" style="width: 18rem;">
+          <%= cl_image_tag travel.picture.key, height: 300, width: 400, crop: :fill, class: "card-img-top" %>
+          <div class="card-body">
+            <h5 class="card-title"><%= travel.name %></h5>
+            <p class="card-text"><%= travel.description %></p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><%= travel.period %></li>
+            <li class="list-group-item"><%= travel.price %>€</li>
+            <li class="list-group-item"><%= travel.number_of_travelers %> travelers</li>
+            <li class="list-group-item"><%= travel.duration %> days </li>
+          </ul>
+          <div class="card-body">
+            <%= link_to "Booker ce voyage",  new_travel_booking_path(travel, @booking)%>
+          </div>
+        </div>
     <% end %>
-</ul>
+</div>

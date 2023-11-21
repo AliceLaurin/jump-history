@@ -3,5 +3,6 @@
 <%= simple_form_for [@user, @travel, @booking] do |f| %>
     <%= f.input :date_of_beginning %>
     <%= f.input :date_of_ending %>
+    <%= f.input :number_of_people %>
     <%= f.submit%>
   <% end %>
