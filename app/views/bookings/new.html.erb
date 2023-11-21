@@ -1,0 +1,7 @@
+<h1> Reserver le voyage <%= @travel.name %> </h1>
+
+<%= simple_form_for [@user, @travel, @booking] do |f| %>
+    <%= f.input :date_of_beginning %>
+    <%= f.input :date_of_ending %>
+    <%= f.submit%>
+  <% end %>
