@@ -172,7 +172,7 @@ travel_5 = Travel.create!(
 
 file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700579945/amz9rko2hyuci2wjzz6j.png")
 travel_5.picture.attach(io: file, filename: "5_dinosaurs.png", content_type: "image/png")
-travel_().save!
+travel_5.save!
 
 # #6 Roman Empire
 # travel_6 = Travel.create!(
