@@ -1,15 +1,19 @@
 <h1> <%= @travel.name %> </h1>
 
-<%= cl_image_tag @travel.picture.key, height: 300, width: 400, crop: :fill %>
+<%# <% if user_signed_in? %>
+  <%# <% if current_user.bookings.include?(@travel_id) %>
 
-<ul>
-  <li> address :  <%= @travel.address %> </li>
-  <li> period :  <%= @travel.period %> </li>
-  <li> perilousness :  <%= @travel.perilousness %> /10 </li>
-  <li> description :  <%= @travel.description %> </li>
-  <li> price :  <%= @travel.price %>€ </li>
-  <li> duration :  <%= @travel.price %> days </li>
-  <li> number_of_travelers :  <%= @travel.price %> </li>
-</ul>
 
-<%= link_to "Booker ce voyage",  new_travel_booking_path(@travel, @booking)%>
+<%# <% else %>
+  <%= cl_image_tag @travel.picture.key, height: 300, width: 400, crop: :fill %>
+  <ul>
+    <li> address :  <%= @travel.address %> </li>
+    <li> period :  <%= @travel.period %> </li>
+    <li> perilousness :  <%= @travel.perilousness %> /10 </li>
+    <li> description :  <%= @travel.description %> </li>
+    <li> price :  <%= @travel.price %>€ </li>
+    <li> duration :  <%= @travel.price %> days </li>
+    <li> number_of_travelers :  <%= @travel.price %> </li>
+  </ul>
+  <%= link_to "Booker ce voyage",  new_travel_booking_path(@travel, @booking)%>
+<%# <% end %>

@@ -12,8 +12,8 @@ Rails.application.routes.draw do
 
   resources :travels, shallow: true do
     resources :bookings, only: [:new, :create]
-    patch "bookings/:id", to: "bookings#update", as: :update_booking
   end
+    resources :bookings, only: [:update]
   # Defines the root path route ("/")
   # root "posts#index"
 end
