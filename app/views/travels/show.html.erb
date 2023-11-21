@@ -11,3 +11,5 @@
   <li> duration :  <%= @travel.price %> days </li>
   <li> number_of_travelers :  <%= @travel.price %> </li>
 </ul>
+
+<%= link_to "Booker ce voyage",  new_travel_booking_path(@travel, @booking)%>

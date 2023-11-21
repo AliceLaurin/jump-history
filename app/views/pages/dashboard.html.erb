@@ -1,30 +1,63 @@
 <h1> Le dashboard de <%= @user.first_name %> </h1>
 
-<h2>Mes voyages créés</h2>
-<% if @travels.length > 0 %>
-    <% @travels.each do |travel| %>
-      <h3><%= travel.name %></h3>
-        <p>Vous avez <%= travel.bookings.length %> demandes de réservation pour ce voyage</p>
-          <% if travel.bookings.length > 0 %>
-          <ul>
-              <% travel.bookings.each do |booking|%>
-              <li> <%= booking.user.first_name %> <%= booking.user.last_name %>  souhaite booker votre voyage </li>
-              <li> Du <%= booking.date_of_beginning %> au <%= booking.date_of_ending %> </li>
-              <%= link_to "Valider la réservation", travel_booking_path(travel, booking),  data: {turbo_method: :patch} %>
-              <%= link_to "Refuser la réservation", travel_booking_path(travel, booking),  data: {turbo_method: :patch} %>
-          <% end %> </li>
-        <% else  %>
-        <% end %>
-        </ul>
-    <% end %>
-<% else %>
-<p>Vous n'avez aucun voyage créé</p>
-<% end %>
+<div>
+  <h2>Mes voyages créés</h2>
+
+  <div class="d-flex flex-wrap">
+      <% if @travels.length > 0 %>
+        <% @travels.each do |travel| %>
+          <div class="card" style="width: 18rem;">
+            <%= cl_image_tag travel.picture.key %>
+            <div class="card-body">
+              <h5 class="card-title"><%= travel.name %></h5>
+              <%= link_to "Voir le voyage", travel_path(travel) %>
+              <p class="card-text">Vous avez <strong> <%= travel.bookings.length %></strong> demandes de réservation pour ce voyage</p>
+            </div>
+              <% if travel.bookings.length > 0 %>
+                      <% travel.bookings.each do |booking|%>
+                        <% if booking.status == "validated"%>
+                          <p>Une reservation a été effectuée sur ce voyage par <%= booking.user.first_name %> du <%= booking.date_of_beginning %> au <%= booking.date_of_ending %></p>
+                        <% else %>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><%= booking.user.first_name %> <%= booking.user.last_name %>  souhaite booker votre voyage du <%= booking.date_of_beginning %> au <%= booking.date_of_ending %>
+                            <%# <%= link_to "Valider la réservation", travel_update_booking_path(booking.travel,  :booking => {:status => "validated"}),  data: {turbo_method: :patch} %>
+                            <%# <%= link_to "Refuser la réservation", travel_update_booking_path(booking.travel, :booking => {:status => "refused"}),  data: {turbo_method: :patch} %>
+                            </li>
+                          </ul>
+                          <% end %>
+                      <% end %>
+                <% else  %>
+                <% end %>
+          </div>
+          <% end %>
+      <% else %>
+        <p>Vous n'avez aucun voyage créé</p>
+      <% end %>
+    </div>
+</div>
 
 
-<h2>Mes réservations</h2>
-  <ul>
+<div>
+  <h2>Mes réservations</h2>
+  <div class="d-flex flex-wrap">
+
     <% @bookings.each do |booking| %>
-      <li> <%= booking.travel.name%> </li>
+          <div class="card" style="width: 18rem;">
+            <%= cl_image_tag booking.travel.picture.key %>
+            <div class="card-body">
+              <h5 class="card-title"><%= booking.travel.name%></h5>
+              <p class="card-text">Statut de la réservation :
+                  <% if booking.status == "pending" %>
+                    en attente
+                  <% elsif booking.status == "validated" %>
+                    validée
+                  <% else %>
+                    refusé
+                  <% end %></p>
+                <%= link_to "Voir le voyage", travel_path(booking.travel) %>
+            </div>
+          </div>
     <% end %>
-  </ul>
+  </div>
+
+</div>
