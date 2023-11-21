@@ -166,7 +166,7 @@ travel_5 = Travel.create!(
   description: "Embark on an extraordinary adventure to the prehistoric world of dinosaurs. Witness majestic creatures, explore lush landscapes, and uncover the mysteries of the ancient Earth.",
   price: 90000,
   duration: 8,
-  number_of_travelers: 4,
+  number_of_travelers: 8,
   user_id: user_5.id
 )
 
@@ -174,67 +174,87 @@ file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700579945/am
 travel_5.picture.attach(io: file, filename: "5_dinosaurs.png", content_type: "image/png")
 travel_5.save!
 
-# #6 Roman Empire
-# travel_6 = Travel.create!(
-#   name: "Glory of Rome: Imperial Tour",
-#   address: "Rome - Italy",
-#   period: "Roman Empire",
-#   perilousness: 4,
-#   description: "Step back in time to the grandeur of the Roman Empire. Visit ancient colosseums, walk through historical forums, and experience the architectural marvels of a once-mighty civilization.",
-#   price: 75000,
-#   duration: 6,
-#   number_of_travelers: 5,
-#   user_id: user_6.id
-# )
+#6 Roman Empire
+travel_6 = Travel.create!(
+  name: "Glory of Rome: Imperial Tour",
+  address: "Rome - Italy",
+  period: "Roman Empire",
+  perilousness: 4,
+  description: "Step back in time to the grandeur of the Roman Empire. Visit ancient colosseums, walk through historical forums, and experience the architectural marvels of a once-mighty civilization.",
+  price: 75000,
+  duration: 6,
+  number_of_travelers: 4,
+  user_id: user_6.id
+)
 
-# #7 Medieval Japan
-# travel_7 = Travel.create!(
-#   name: "Samurai Quest: Medieval Japan Adventure",
-#   address: "Kyoto - Japan",
-#   period: "Medieval Japan",
-#   perilousness: 3,
-#   description: "Journey to medieval Japan and explore the world of samurai and ninja. Visit ancient temples, witness traditional martial arts, and immerse yourself in the rich cultural heritage of Japan's feudal era.",
-#   price: 68000,
-#   duration: 5,
-#   number_of_travelers: 6,
-#   user_id: user_7.id
-# )
+file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700584385/epkhcdk8c9ih1e6afbhu.png")
+travel_6.picture.attach(io: file, filename: "6_roma.png", content_type: "image/png")
+travel_6.save!
 
-# #8 Mexican Aztec Empire
-# travel_8 = Travel.create!(
-#   name: "Aztec Legacy: Greatness of Ancient Mexico",
-#   address: "Tenochtitlan - Mexico",
-#   period: "Mexican Aztec Empire",
-#   perilousness: 4,
-#   description: "Discover the secrets of the ancient Aztec civilization in the heart of Mexico. Explore monumental pyramids, witness colorful ceremonies, and unravel the mysteries of this fascinating empire.",
-#   price: 72000,
-#   duration: 7,
-#   number_of_travelers: 5,
-#   user_id: user_8.id
-# )
+#7 Medieval Japan
+travel_7 = Travel.create!(
+  name: "Samurai Quest: Medieval Japan Adventure",
+  address: "Kyoto - Japan",
+  period: "Medieval Japan",
+  perilousness: 3,
+  description: "Journey to medieval Japan and explore the world of samurai and ninja. Visit ancient temples, witness traditional martial arts, and immerse yourself in the rich cultural heritage of Japan's feudal era.",
+  price: 68000,
+  duration: 5,
+  number_of_travelers: 4,
+  user_id: user_7.id
+)
 
-# #9 American Gold Rush
-# travel_9 = Travel.create!(
-#   name: "Gold Fever Trail: American West Adventure",
-#   address: "California - USA",
-#   period: "American Gold Rush",
-#   perilousness: 8,
-#   description: "Relive the excitement of the American Gold Rush. Traverse the rugged landscapes of California, pan for gold in riverbeds, and experience the challenges and rewards of the frontier era.",
-#   price: 80000,
-#   duration: 6,
-#   number_of_travelers: 4,
-#   user_id: user_9.id
-# )
+file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700584441/fbkp7subj8jk5nwpg1s0.png")
+travel_7.picture.attach(io: file, filename: "7_japan.png", content_type: "image/png")
+travel_7.save!
 
-# #10 Caribbean Pirate Gold Era
-# travel_10 = Travel.create!(
-#   name: "Pirate's Bounty: Caribbean Treasure Hunt",
-#   address: "Tortuga - Caribbean",
-#   period: "Caribbean Pirate Gold Era",
-#   perilousness: 10,
-#   description: "Sail the high seas of the Caribbean during the golden age of piracy. Join a crew of swashbucklers, search for buried treasure, and experience the thrill of life as a pirate.",
-#   price: 100000,
-#   duration: 9,
-#   number_of_travelers: 6,
-#   user_id: user_10.id
-# )
+#8 Mexican Aztec Empire
+travel_8 = Travel.create!(
+  name: "Aztec Legacy: Greatness of Ancient Mexico",
+  address: "Tenochtitlan - Mexico",
+  period: "Mexican Aztec Empire",
+  perilousness: 4,
+  description: "Discover the secrets of the ancient Aztec civilization in the heart of Mexico. Explore monumental pyramids, witness colorful ceremonies, and unravel the mysteries of this fascinating empire.",
+  price: 72000,
+  duration: 7,
+  number_of_travelers: 6,
+  user_id: user_8.id
+)
+
+file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700584462/gdbvlwzkft1nqyxw6iva.png")
+travel_8.picture.attach(io: file, filename: "8_aztec.png", content_type: "image/png")
+travel_8.save!
+
+#9 American Gold Rush
+travel_9 = Travel.create!(
+  name: "Gold Fever Trail: American West Adventure",
+  address: "California - USA",
+  period: "American Gold Rush",
+  perilousness: 5,
+  description: "Relive the excitement of the American Gold Rush. Traverse the rugged landscapes of California, pan for gold in riverbeds, and experience the challenges and rewards of the frontier era.",
+  price: 80000,
+  duration: 6,
+  number_of_travelers: 4,
+  user_id: user_9.id
+)
+
+file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700584480/ghyjt3hcy8sqcbokf8nm.png")
+travel_9.picture.attach(io: file, filename: "9_cowboys.png", content_type: "image/png")
+travel_9.save!
+
+#10 Caribbean Pirate Gold Era
+travel_10 = Travel.create!(
+  name: "Pirate's Bounty: Caribbean Treasure Hunt",
+  address: "Tortuga - Caribbean",
+  period: "Caribbean Pirate Gold Era",
+  perilousness: 10,
+  description: "Sail the high seas of the Caribbean during the golden age of piracy. Join a crew of swashbucklers, search for buried treasure, and experience the thrill of life as a pirate.",
+  price: 100000,
+  duration: 9,
+  number_of_travelers: 6,
+  user_id: user_10.id
+)
+
+file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700584507/wcqgzpektgyjkj2tcjx0.png")
+travel_10.picture.attach(io: file, filename: "10_pirate.png", content_type: "image/png")
+travel_10.save!
