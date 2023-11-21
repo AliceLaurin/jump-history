@@ -1,6 +1,6 @@
 class BookingsController < ApplicationController
 
-  before_action :set_travel, only: %i[new create edit update]
+  before_action :set_travel, only: %i[new create]
 
   def new
     @booking = Booking.new
@@ -24,10 +24,9 @@ class BookingsController < ApplicationController
   end
 
   def update
-    raise
     @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
-
+    @booking.status = params[:status]
+    @booking.save
     redirect_to dashboard_path
   end
 
