@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_travel, only: %i[new create]
+  before_action :set_travel, only: %i[new create edit update]
 
   def new
     @booking = Booking.new
@@ -16,6 +16,17 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    raise
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    redirect_to dashboard_path
   end
 
   private
