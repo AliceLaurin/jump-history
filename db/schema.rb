@@ -58,7 +58,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_102124) do
     t.string "picture"
     t.string "address"
     t.string "period"
-    t.string "perilousness"
+    t.integer "perilousness"
     t.string "description"
     t.integer "price"
     t.integer "duration"
