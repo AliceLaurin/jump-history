@@ -2,11 +2,34 @@
   justify-content: space-between;
   background: #FFE8D6;
 }
+.flip-box:hover {
+  transition-delay: 150ms;
+  transform: rotateX(180deg);
+}
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 60px;
+}
+
+.dropdown-item{
+  color: white;
+  &:hover{
+  background-color:#DDBEA9 ;
+  }
+}
+
+.dropdown-menu{
+  background-color: #CB997E;
+}
+
+.nav-item .avatar {
+  width: 60px;
+  &:hover{
+  cursor: pointer;
+  opacity: 0.70;
+  }
 }
