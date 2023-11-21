@@ -1,0 +1,30 @@
+<h1> Le dashboard de <%= @user.first_name %> </h1>
+
+<h2>Mes voyages créés</h2>
+<% if @travels.length > 0 %>
+    <% @travels.each do |travel| %>
+      <h3><%= travel.name %></h3>
+        <p>Vous avez <%= travel.bookings.length %> demandes de réservation pour ce voyage</p>
+          <% if travel.bookings.length > 0 %>
+          <ul>
+              <% travel.bookings.each do |booking|%>
+              <li> <%= booking.user.first_name %> <%= booking.user.last_name %>  souhaite booker votre voyage </li>
+              <li> Du <%= booking.date_of_beginning %> au <%= booking.date_of_ending %> </li>
+              <%= link_to "Valider la réservation", travel_booking_path(travel, booking),  data: {turbo_method: :patch} %>
+              <%= link_to "Refuser la réservation", travel_booking_path(travel, booking),  data: {turbo_method: :patch} %>
+          <% end %> </li>
+        <% else  %>
+        <% end %>
+        </ul>
+    <% end %>
+<% else %>
+<p>Vous n'avez aucun voyage créé</p>
+<% end %>
+
+
+<h2>Mes réservations</h2>
+  <ul>
+    <% @bookings.each do |booking| %>
+      <li> <%= booking.travel.name%> </li>
+    <% end %>
+  </ul>
