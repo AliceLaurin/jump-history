@@ -1,7 +1,6 @@
 class Travel < ApplicationRecord
-  validates :perilousness, presence: true, inclusion: { in: 0..5}
+  validates :perilousness, presence: true, inclusion: { in: 0..10}
   validates :name, presence: true
-  validates :picture, presence: true
   validates :address, presence: true
   validates :period, presence: true
   validates :description, presence: true
