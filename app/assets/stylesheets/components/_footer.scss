@@ -1,0 +1,21 @@
+.footer {
+  justify-content: space-between;
+  background-color: #FFE8D6;
+  display: flex;
+  height: 130px;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.icons i{
+  color: #CB997E;
+
+  &:hover {
+  color: #DDBEA9;
+  }
+}
+
+.footer p{
+  color: #CB997E;
+  font-size: 20px ;
+}
