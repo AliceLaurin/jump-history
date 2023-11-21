@@ -1,6 +1,7 @@
 <h1>Notre offre de voyage ! </h1>
 <div class="d-flex flex-wrap">
   <% @travels.each do |travel| %>
+    <%= link_to travel_path(travel) do %>
         <div class="card" style="width: 18rem;">
           <%= cl_image_tag travel.picture.key, height: 300, width: 400, crop: :fill, class: "card-img-top" %>
           <div class="card-body">
@@ -19,4 +20,6 @@
           </div>
         </div>
     <% end %>
+  <% end %>
+
 </div>
