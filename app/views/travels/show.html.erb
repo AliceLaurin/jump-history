@@ -17,3 +17,9 @@
   </ul>
   <%= link_to "Booker ce voyage",  new_travel_booking_path(@travel, @booking)%>
 <%# <% end %>
+
+<% if user_signed_in? %>
+<h2>Réserver ce voyage</h2>
+
+
+<% end %>
