@@ -2,12 +2,13 @@
   color: #00334E;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #74F2DA;
-  transition: background 0.3s ease;
+  background: #25dfe9;
+  transition: background 0.1s ease;
 }
 
 .btn-flat-navbar:hover {
-  background: #a9f7e8;
+  background: #90f9ff;
   color: #00334E;
   transition-delay: 250ms;
+  transform: scale(1.025);
 }
