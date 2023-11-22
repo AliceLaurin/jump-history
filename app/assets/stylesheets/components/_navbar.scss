@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: #FFE8D6;
+  background: #00334E;
 }
 .flip-box:hover {
   transition-delay: 150ms;
@@ -18,12 +18,13 @@
 .dropdown-item{
   color: white;
   &:hover{
-  background-color:#DDBEA9 ;
+  color: #00334E;
+  background-color:#74F2DA ;
   }
 }
 
 .dropdown-menu{
-  background-color: #CB997E;
+  background-color: #00334E;
 }
 
 .nav-item .avatar {

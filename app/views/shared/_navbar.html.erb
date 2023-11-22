@@ -2,7 +2,7 @@
   <div class="container-fluid">
   <div class="flip-box">
       <%= link_to root_path, class: "navbar-brand m-2" do %>
-        <%= cl_image_tag("fonnqyyamm8meefbhx5a") %>
+        <%= image_tag ("Jumphistory_logo.png") %>
       <% end %>
   </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,7 +21,7 @@
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
               <% else %>
                 <li class="nav-item active ">
-                <%= link_to "Connexion", new_user_session_path, class: "btn btn-flat " %>
+                <%= link_to "Connexion", new_user_session_path, class: "btn btn-flat-navbar " %>
           </li>
               <% end %>
             </div>

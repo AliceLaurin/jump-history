@@ -1,6 +1,6 @@
 .footer {
   justify-content: space-between;
-  background-color: #FFE8D6;
+  background-color: #00334E;
   display: flex;
   height: 130px;
   text-align: center;
@@ -8,14 +8,14 @@
   flex-direction: column;
 }
 .icons i{
-  color: #CB997E;
+  color: #74F2DA;
 
   &:hover {
-  color: #DDBEA9;
+  color: white;
   }
 }
 
 .footer p{
-  color: #CB997E;
+  color: white;
   font-size: 20px ;
 }

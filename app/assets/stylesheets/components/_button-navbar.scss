@@ -1,0 +1,13 @@
+.btn-flat-navbar {
+  color: #00334E;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #74F2DA;
+  transition: background 0.3s ease;
+}
+
+.btn-flat-navbar:hover {
+  background: #a9f7e8;
+  color: #00334E;
+  transition-delay: 250ms;
+}
