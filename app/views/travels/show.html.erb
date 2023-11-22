@@ -15,11 +15,27 @@
     <li> duration :  <%= @travel.price %> days </li>
     <li> number_of_travelers :  <%= @travel.price %> </li>
   </ul>
-  <%= link_to "Booker ce voyage",  new_travel_booking_path(@travel, @booking)%>
+  <%# <%= link_to "Booker this trip",  new_travel_booking_path(@travel, @booking)%>
 <%# <% end %>
 
-<% if user_signed_in? %>
-<h2>Réserver ce voyage</h2>
+<% if @travel.user != current_user %>
+  <h2>Book this trip</h2>
 
+  <% if user_signed_in? %>
+  <%= simple_form_for [@user, @travel, @booking] do |f| %>
+      <%= f.input :date_of_beginning,
+                  as: :string,
+                  input_html: { data: { controller: "datepicker" } } %>
+      <%= f.input :date_of_ending,
+                  as: :string,
+                  input_html: { data: { controller: "datepicker" } } %>
+      <%= f.input :number_of_people %>
+      <%= f.submit%>
+    <% end %>
 
+  <% else %>
+    Log in to book this trip
+    <%= link_to "Log in", new_user_session_path%>
+  <% end %>
 <% end %>
+

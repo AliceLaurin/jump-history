@@ -22,6 +22,7 @@ class TravelsController < ApplicationController
 
   def show
     @travel = Travel.find(params[:id])
+    @booking = Booking.new
   end
 
   private
