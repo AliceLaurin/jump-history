@@ -1,33 +1,20 @@
-<div class="main-container container-fluid">
+<div  class="main-container m-5">
 
-    <div class="banner d-flex justify-content-evenly">
-      <div class="title">
-        <h1>JUMP HISTORY</h1>
-        <p>Travel further 🚀</p>
+    <div class="banner d-flex">
+      <div class="title-description col-sm-6">
+        <h1 style="font-family: impact">JUMP HISTORY</h1>
+        <h2>Travel further 🚀</h2>
+        <p>🕰️ Ready to defy the ordinary? Dive into the extraordinary with Temporal Odyssey, where we don't just travel; we time-hop! 🌟</p>
+        <p>Time waits for no one—neither should you! Start your adventure now!</p>
         <%= link_to "See all travels", travels_path, class: "btn btn-flat" %>
       </div>
+      <div class="globe col-sm-6">
       <%= image_tag ("Banner.jpg"), :class => "banner-image"%>
-    </div>
-
-  <div class = "container d-flex flex-column">
-  <%# div des cards des photos  %>
-  <div class="container2 d-flex justify-content-evenly m-5">
-    <div class="card-home border border-0 shadow-none" style="width: 18rem;">
-      <img src="https://res.cloudinary.com/dpsozxpdq/image/upload/v1700565078/enfant_qui_pleure_nebtna.jpg" class="card-img-top" alt="...">
-      <div class="card-body m-5">
-      <p class="card-text">Vos vacances avant Jump'History</p>
       </div>
     </div>
 
-    <div class="card-home border border-0" style="width: 18rem;">
-      <img src="https://res.cloudinary.com/dpsozxpdq/image/upload/v1700565081/enfant_heureux_qg4i4f.jpg" class="card-img-top" alt="...">
-      <div class="card-body border border-0 shadow-none m-5">
-      <p class="card-text">Vos vacances après avoir réservé via Jump'History</p>
-      </div>
-    </div>
-  </div>
 
-  <div class = "container3 justify-content-center m-5">
+  <div class = "container justify-content-center mt-4 mb-4">
     <div id="carouselExampleDark" class="carousel carousel-dark slide">
       <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -65,7 +52,6 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
     </div>
   </div>
 </div>
