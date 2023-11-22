@@ -23,12 +23,20 @@ user_1 = User.create!(
   last_name: "Carter"
   )
 
+file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700649158/s7zd27ystubkd5chff6b.jpg")
+user_1.profile_picture.attach(io: file, filename: "user_1_howard.jpeg", content_type: "image/png")
+user_1.save!
+
 user_2 = User.create!(
   email: "godefroy.demontmirail@proton.me",
   password: "Gf7eDQC5XOfzsSw8",
   first_name: "Godefroy",
   last_name: "Demontmirail"
   )
+
+file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700651853/cvdh5mgoblr0zg6jucrh.png")
+user_1.profile_picture.attach(io: file, filename: "user_2_godeffroy.png", content_type: "image/png")
+user_1.save!
 
   user_3 = User.create!(
   email: "maximilien.robespierre@proton.me",
