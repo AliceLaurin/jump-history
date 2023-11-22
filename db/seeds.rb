@@ -16,6 +16,7 @@ User.destroy_all
 
   #USERS#
 
+  puts "creating users..."
 user_1 = User.create!(
   email: "howard.carter@proton.me",
   password: "7xXkS5gYMdD3WXON",
@@ -127,7 +128,11 @@ user_3.save!
     user_10.picture.attach(io: file, filename: "user_10_jack.jpeg", content_type: "image/png")
     user_10.save!
 
+    puts "users created !"
+
   #TRAVELS#
+
+  puts "creating travels...."
 
 #1 Ancient Egypt
 travel_1 = Travel.create!(
@@ -299,3 +304,54 @@ travel_10 = Travel.create!(
 file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700584507/wcqgzpektgyjkj2tcjx0.png")
 travel_10.picture.attach(io: file, filename: "10_pirate.png", content_type: "image/png")
 travel_10.save!
+
+puts "users created !"
+  #BOOKINGS#
+
+puts "creating bookings..."
+booking_1 = Booking.create!(
+  date_of_beginning: "2023-11-30",
+  date_of_ending: "2023-12-15",
+  status: "pending",
+  number_of_people: 10,
+  user_id: user_2.id,
+  travel_id: travel_1.id
+)
+
+booking_2 = Booking.create!(
+  date_of_beginning: "2023-12-01",
+  date_of_ending: "2023-12-10",
+  status: "pending",
+  number_of_people: 2,
+  user_id: user_2.id,
+  travel_id: travel_3.id
+)
+
+booking_3 = Booking.create!(
+  date_of_beginning: "2023-12-20",
+  date_of_ending: "2023-12-30",
+  status: "pending",
+  number_of_people: 20,
+  user_id: user_3.id,
+  travel_id: travel_1.id
+)
+
+booking_4 = Booking.create!(
+  date_of_beginning: "2023-12-20",
+  date_of_ending: "2023-12-30",
+  status: "pending",
+  number_of_people: 20,
+  user_id: user_1.id,
+  travel_id: travel_2.id
+)
+
+booking_5 = Booking.create!(
+  date_of_beginning: "2023-12-20",
+  date_of_ending: "2023-12-30",
+  status: "pending",
+  number_of_people: 20,
+  user_id: user_1.id,
+  travel_id: travel_3.id
+)
+
+puts "bookings created"
