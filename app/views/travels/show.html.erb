@@ -1,41 +1,77 @@
-<h1> <%= @travel.name %> </h1>
 
-<%# <% if user_signed_in? %>
-  <%# <% if current_user.bookings.include?(@travel_id) %>
+<div class="container">
+  <div class="d-flex">
+    <div class="p-5">
+      <h1> <%= @travel.name %> </h1>
+      <h4><%= @travel.description %></h4>
+      <ul>
+        <li> Where ?  <%= @travel.address %> </li>
+        <li> When ?  <%= @travel.period %> </li>
+        <li> perilousness :  <%= @travel.perilousness %> /10 </li>
+        <li> price :  <%= @travel.price %>€ </li>
+        <li> recommended duration :  <%= @travel.price %> days </li>
+        <li> number of travelers :  <%= @travel.price %> </li>
+    </ul>
+      <%# <%= link_to "Booker this trip",  new_travel_booking_path(@travel, @booking)%>
+      <%# <% end %>
+    </div>
+      <%# <% if user_signed_in? %>
+      <%# <% if current_user.bookings.include?(@travel_id) %>
+    <div>
+      <%# <% else %>
+      <%= cl_image_tag @travel.picture.key, height: 400, width: 533, crop: :fill, class:"rounded" %>
+    </div>
+  </div>
 
+<div class="w-50">
+  <% if @travel.user != current_user %>
+      <h2>Book this trip</h2>
 
-<%# <% else %>
-  <%= cl_image_tag @travel.picture.key, height: 300, width: 400, crop: :fill %>
-  <ul>
-    <li> address :  <%= @travel.address %> </li>
-    <li> period :  <%= @travel.period %> </li>
-    <li> perilousness :  <%= @travel.perilousness %> /10 </li>
-    <li> description :  <%= @travel.description %> </li>
-    <li> price :  <%= @travel.price %>€ </li>
-    <li> duration :  <%= @travel.price %> days </li>
-    <li> number_of_travelers :  <%= @travel.price %> </li>
-  </ul>
-  <%# <%= link_to "Booker this trip",  new_travel_booking_path(@travel, @booking)%>
-<%# <% end %>
+      <% if user_signed_in? %>
 
-<% if @travel.user != current_user %>
-  <h2>Book this trip</h2>
+        <% bookings = current_user.bookings.where(travel_id: @travel.id) %>
+        <% if bookings.empty? %>
+          <%= simple_form_for [@user, @travel, @booking] do |f| %>
+              <%= f.input :date_of_beginning,
+                          as: :string,
+                          input_html: { data: { controller: "datepicker" } } %>
+              <%= f.input :date_of_ending,
+                          as: :string,
+                          input_html: { data: { controller: "datepicker" } } %>
+              <%= f.input :number_of_people %>
+              <%= f.submit%>
+              <% end %>
 
-  <% if user_signed_in? %>
-  <%= simple_form_for [@user, @travel, @booking] do |f| %>
-      <%= f.input :date_of_beginning,
-                  as: :string,
-                  input_html: { data: { controller: "datepicker" } } %>
-      <%= f.input :date_of_ending,
-                  as: :string,
-                  input_html: { data: { controller: "datepicker" } } %>
-      <%= f.input :number_of_people %>
-      <%= f.submit%>
-    <% end %>
+        <% else %>
+        <% rejected_bookings = bookings.where(status: "rejected") %>
+          <% if rejected_bookings.empty? %>
+            <p>Sorry, you <strong>already have a booking</strong> for this trip.</p>
+            <p>Details of your booking : </p>
+            <ul>
+              <li>Dates : from <%= bookings.first.date_of_beginning.strftime("%e %B %Y") %> to <%= bookings.first.date_of_ending.strftime("%e %B %Y") %> </li>
+              <li>Status : <strong><%= bookings.first.status %></strong></li>
+            </ul>
 
-  <% else %>
-    Log in to book this trip
-    <%= link_to "Log in", new_user_session_path%>
+          <% else %>
+            <%= simple_form_for [@user, @travel, @booking] do |f| %>
+              <%= f.input :date_of_beginning,
+                as: :string,
+                input_html: { data: { controller: "datepicker" } } %>
+              <%= f.input :date_of_ending,
+                as: :string,
+                input_html: { data: { controller: "datepicker" } } %>
+              <%= f.input :number_of_people %>
+              <%= f.submit%>
+              <% end %>
+          <% end %>
+        <% end %>
+
+      <% else %>
+        Log in to book this trip
+        <%= link_to "Log in", new_user_session_path%>
+      <% end %>
+
   <% end %>
-<% end %>
+</div>
 
+</div>
