@@ -11,18 +11,20 @@
                 <div class="card-body">
                   <h5 class="card-title"><strong><%= travel.name %></strong></h5>
                   <%= link_to "Voir le voyage", travel_path(travel) %>
-                  <p class="card-text">Vous avez <strong> <%=travel.bookings.length%></strong> demandes de réservation pour ce voyage</p>
+                  <% number = travel.bookings.where(status:"pending").all %>
+                  <% length = number.length %>
+                  <p class="card-text">Vous avez <strong> <%=length%></strong> demandes de réservation en attente pour ce voyage</p>
                     <% if travel.bookings.length > 0 %>
                       <% travel.bookings.each do |booking|%>
-                        <% if booking.status == "validated"%>
-                          <p>Réservation confirmée sur ce voyage pour <%= booking.user.first_name %> <%= booking.user.last_name %>  du <%= booking.date_of_beginning.strftime("%e %B %Y") %> au <%= booking.date_of_ending.strftime("%e %B %Y") %></p>
-                        <% elsif booking.status == "pending" %>
+                        <% if booking.status == "pending" %>
                           <ul class="list-group list-group-flush">
                             <li class="list-group-item"><%= booking.user.first_name %> <%= booking.user.last_name %>  souhaite booker votre voyage du <%= booking.date_of_beginning %> au <%= booking.date_of_ending %>
                             <%= link_to "Valider la réservation", booking_path(id: booking.id, status: "validated"), data: {turbo_method: :patch} %>
                             <%= link_to "Refuser la réservation", booking_path(id: booking.id, status: "refused"), data: {turbo_method: :patch} %>
                             </li>
                           </ul>
+                      <% elsif booking.status == "validated"%>
+                          <p>Réservation confirmée sur ce voyage pour <%= booking.user.first_name %> <%= booking.user.last_name %>  du <%= booking.date_of_beginning.strftime("%e %B %Y") %> au <%= booking.date_of_ending.strftime("%e %B %Y") %></p>
                       <% else %>
                         <p>Réservation refusée sur ce voyage pour <%= booking.user.first_name %> <%= booking.user.last_name %>  du <%= booking.date_of_beginning %> au <%= booking.date_of_ending %></p>
                       <% end %>
