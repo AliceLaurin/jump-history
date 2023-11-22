@@ -10,6 +10,7 @@
 
 require "open-uri"
 
+Booking.destroy_all
 Travel.destroy_all
 User.destroy_all
 
