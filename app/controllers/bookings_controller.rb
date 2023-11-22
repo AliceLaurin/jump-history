@@ -13,7 +13,6 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     if @booking.save
       redirect_to dashboard_path
-      # à modifier plus tard
     else
       render :new, status: :unprocessable_entity
     end
