@@ -1,11 +1,41 @@
 
 .main-container{
   color: white;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-  font-family: 'DM Serif Display', serif;
+  font-family: 'roboto';
+  margin-right: auto;
+  margin-left: auto
 }
 
 .container3 p, h5{
   color: white;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+}
+.banner-image {
+  width: 500px;
+  height: 500px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.title-description{
+  margin: 25px;
+}
+
+.banner{
+  width: 100%;
+}
+
+.banner h1 {
+  margin: 0;
+  color: #101846;
+  font-size: 70px;
+}
+
+.banner h2 {
+  font-size: 35px;
+  color: #101846;
+}
+p {
+  font-size: 20px;
+  font-family: roboto;
+  color: #101846;
 }

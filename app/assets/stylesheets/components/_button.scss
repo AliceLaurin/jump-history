@@ -3,13 +3,13 @@
   padding: 8px 24px;
   border-radius: 4px;
   background: #101846;
-  transition: background 0.3s ease;
+  transition: background 0.2s ease;
 }
 
 .btn-flat:hover {
-  background: #74F2DA;
-  color: white;
-  transition-delay: 250ms;
+  background: #25dfe9;
+  color: #101846;
+  transform: scale(1.025);
 }
 
 // button index travels

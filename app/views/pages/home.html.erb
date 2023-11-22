@@ -1,69 +1,57 @@
+<div  class="main-container m-5">
 
-
-<div class = "main-container d-flex flex-column">
-  <%# bannière %>
-  <div class="banner" style="background-image: url(https://res.cloudinary.com/dpsozxpdq/image/upload/v1700487622/christine-roy-ir5MHI6rPg0-unsplash_iszycn.jpg);">
-   <div class="container">
-      <h1 style="font-family: DM Serif Display"> Welcome to Jump'History</h1>
-      <p>Change your holidays</p>
-      <%= link_to "Book now", "#", class: "btn btn-flat" %>
-    </div>
-  </div>
-  <%# div des cards des photos  %>
-  <div class="container2 d-flex justify-content-evenly m-5">
-    <div class="card-home border border-0 shadow-none" style="width: 18rem;">
-      <img src="https://res.cloudinary.com/dpsozxpdq/image/upload/v1700565078/enfant_qui_pleure_nebtna.jpg" class="card-img-top" alt="...">
-      <div class="card-body m-5">
-       <p class="card-text">Vos vacances avant Jump'History</p>
+    <div class="banner d-flex">
+      <div class="title-description col-sm-6">
+        <h1 style="font-family: impact">JUMP HISTORY</h1>
+        <h2>Travel further 🚀</h2>
+        <p>🕰️ Ready to defy the ordinary? Dive into the extraordinary with Temporal Odyssey, where we don't just travel; we time-hop! 🌟</p>
+        <p>Time waits for no one—neither should you! Start your adventure now!</p>
+        <%= link_to "See all travels", travels_path, class: "btn btn-flat" %>
+      </div>
+      <div class="globe col-sm-6">
+      <%= image_tag ("Banner.jpg"), :class => "banner-image"%>
       </div>
     </div>
 
-    <div class="card-home border border-0" style="width: 18rem;">
-      <img src="https://res.cloudinary.com/dpsozxpdq/image/upload/v1700565081/enfant_heureux_qg4i4f.jpg" class="card-img-top" alt="...">
-      <div class="card-body border border-0 shadow-none m-5">
-       <p class="card-text">Vos vacances après avoir réservé via Jump'History</p>
-      </div>
-    </div>
-  </div>
 
-  <div class = "container3 justify-content-center m-5">
+  <div class = "container justify-content-center mt-4 mb-4">
     <div id="carouselExampleDark" class="carousel carousel-dark slide">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-         <img src="https://res.cloudinary.com/dpsozxpdq/image/upload/v1700489327/main-qimg-93103d5d17bfbff42398b24566c61d36-lq_lyydml.jpg" class="d-block w-100" alt="...">
-         <div class="carousel-caption d-none d-md-block">
-            <h5>Our Best Sellers</h5>
-            <p>Discover the gladiators</p>
-          </div>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-item" data-bs-interval="2000">
-          <img src="https://res.cloudinary.com/dpsozxpdq/image/upload/v1700487628/simon-berger-boyXZfqpwpU-unsplash_ipbmku.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+          <img src="https://res.cloudinary.com/dpsozxpdq/image/upload/v1700489327/main-qimg-93103d5d17bfbff42398b24566c61d36-lq_lyydml.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
+              <h5>Our Best Sellers</h5>
+              <p>Discover the gladiators</p>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="https://res.cloudinary.com/dpsozxpdq/image/upload/v1700487628/simon-berger-boyXZfqpwpU-unsplash_ipbmku.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Second slide label</h5>
+              <p>Some representative placeholder content for the second slide.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="https://res.cloudinary.com/dpsozxpdq/image/upload/v1700487625/titanic_ooxe14.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>Third slide label</h5>
+              <p>Some representative placeholder content for the third slide.</p>
+            </div>
           </div>
         </div>
-        <div class="carousel-item">
-          <img src="https://res.cloudinary.com/dpsozxpdq/image/upload/v1700487625/titanic_ooxe14.jpg" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
-          </div>
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
     </div>
   </div>
 </div>
