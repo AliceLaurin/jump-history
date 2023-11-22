@@ -35,8 +35,8 @@ user_2 = User.create!(
   )
 
 file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700651853/cvdh5mgoblr0zg6jucrh.png")
-user_1.picture.attach(io: file, filename: "user_2_godeffroy.png", content_type: "image/png")
-user_1.save!
+user_2.picture.attach(io: file, filename: "user_2_godeffroy.png", content_type: "image/png")
+user_2.save!
 
   user_3 = User.create!(
   email: "maximilien.robespierre@proton.me",
@@ -45,12 +45,21 @@ user_1.save!
   last_name: "Robespierre"
   )
 
+  file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659179/cnusn4mtnzbsqdrppzdm.png")
+user_3.picture.attach(io: file, filename: "user_3_maximilien.png", content_type: "image/png")
+user_3.save!
+
+
   user_4 = User.create!(
   email: "luke.skywalker@proton.me",
   password: "QUQZH4nvdqHD82d6",
   first_name: "Luke",
   last_name: "Skywalker"
   )
+
+  file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659197/zg80f1ltoaihefkjznjh.webp")
+  user_4.picture.attach(io: file, filename: "user_4_luke.png", content_type: "image/png")
+  user_4.save!
 
   user_5 = User.create!(
   email: "steven.spielberg@proton.me",
@@ -59,12 +68,20 @@ user_1.save!
   last_name: "Spielberg"
   )
 
+  file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659218/yzqyeovamr76x1tlev51.jpg")
+  user_5.picture.attach(io: file, filename: "user_5_steven.jpeg", content_type: "image/png")
+  user_5.save!
+
   user_6 = User.create!(
   email: "jules.cesar@proton.me",
   password: "9YNv9Rc5OLgTty1s",
   first_name: "Jules",
   last_name: "Cesar"
   )
+
+  file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659273/hzlxxqzei6rupu8yxe8d.webp")
+  user_6.picture.attach(io: file, filename: "user_6_cesar.jpeg", content_type: "image/png")
+  user_6.save!
 
   user_7 = User.create!(
   email: "musashi.miyamoto@proton.me",
@@ -73,12 +90,20 @@ user_1.save!
   last_name: "Miyamoto"
   )
 
+  file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659309/btptvblhf3e4hd1bje5x.png")
+  user_7.picture.attach(io: file, filename: "user_7_musashi.jpeg", content_type: "image/png")
+  user_7.save!
+
   user_8 = User.create!(
   email: "montezuma.tenochticlan@proton.me",
   password: "YjsQZXq1bLC9cn7y",
   first_name: "Montezuma",
   last_name: "Tenochticlan"
   )
+
+  file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659334/sbud7dyyfajlktc4mitb.jpg")
+  user_8.picture.attach(io: file, filename: "user_8_montezuma.jpeg", content_type: "image/png")
+  user_8.save!
 
   user_9 = User.create!(
   email: "sergio.leone@proton.me",
@@ -87,6 +112,10 @@ user_1.save!
   last_name: "Leone"
   )
 
+  file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659356/aj5hjsmjxugpwfwrwkcv.jpg")
+  user_9.picture.attach(io: file, filename: "user_9_sergio.jpeg", content_type: "image/png")
+  user_9.save!
+
   user_10 = User.create!(
     email: "jack.sparrow@proton.me",
     password: "H2q7QK1OBDlmhBhX",
@@ -94,6 +123,9 @@ user_1.save!
     last_name: "Sparrow"
     )
 
+    file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659368/aiuup3qqc5o7dyepb7xo.jpg")
+    user_10.picture.attach(io: file, filename: "user_10_jack.jpeg", content_type: "image/png")
+    user_10.save!
 
   #TRAVELS#
 
