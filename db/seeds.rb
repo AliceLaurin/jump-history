@@ -16,12 +16,17 @@ User.destroy_all
 
   #USERS#
 
+  puts "creating users..."
 user_1 = User.create!(
   email: "howard.carter@proton.me",
   password: "7xXkS5gYMdD3WXON",
   first_name: "Howard",
   last_name: "Carter"
   )
+
+file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700649158/s7zd27ystubkd5chff6b.jpg")
+user_1.picture.attach(io: file, filename: "user_1_howard.jpeg", content_type: "image/png")
+user_1.save!
 
 user_2 = User.create!(
   email: "godefroy.demontmirail@proton.me",
@@ -30,12 +35,21 @@ user_2 = User.create!(
   last_name: "Demontmirail"
   )
 
+file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700651853/cvdh5mgoblr0zg6jucrh.png")
+user_2.picture.attach(io: file, filename: "user_2_godeffroy.png", content_type: "image/png")
+user_2.save!
+
   user_3 = User.create!(
   email: "maximilien.robespierre@proton.me",
   password: "7MaDGtc1PpmL4Sah",
   first_name: "Maximilien",
   last_name: "Robespierre"
   )
+
+  file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659179/cnusn4mtnzbsqdrppzdm.png")
+user_3.picture.attach(io: file, filename: "user_3_maximilien.png", content_type: "image/png")
+user_3.save!
+
 
   user_4 = User.create!(
   email: "luke.skywalker@proton.me",
@@ -44,12 +58,20 @@ user_2 = User.create!(
   last_name: "Skywalker"
   )
 
+  file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659197/zg80f1ltoaihefkjznjh.webp")
+  user_4.picture.attach(io: file, filename: "user_4_luke.png", content_type: "image/png")
+  user_4.save!
+
   user_5 = User.create!(
   email: "steven.spielberg@proton.me",
   password: "4zPd0aToz6NMpbcK",
   first_name: "Steven",
   last_name: "Spielberg"
   )
+
+  file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659218/yzqyeovamr76x1tlev51.jpg")
+  user_5.picture.attach(io: file, filename: "user_5_steven.jpeg", content_type: "image/png")
+  user_5.save!
 
   user_6 = User.create!(
   email: "jules.cesar@proton.me",
@@ -58,12 +80,20 @@ user_2 = User.create!(
   last_name: "Cesar"
   )
 
+  file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659273/hzlxxqzei6rupu8yxe8d.webp")
+  user_6.picture.attach(io: file, filename: "user_6_cesar.jpeg", content_type: "image/png")
+  user_6.save!
+
   user_7 = User.create!(
   email: "musashi.miyamoto@proton.me",
   password: "SXUDGcoMw7dby6tf",
   first_name: "Musashi",
   last_name: "Miyamoto"
   )
+
+  file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659309/btptvblhf3e4hd1bje5x.png")
+  user_7.picture.attach(io: file, filename: "user_7_musashi.jpeg", content_type: "image/png")
+  user_7.save!
 
   user_8 = User.create!(
   email: "montezuma.tenochticlan@proton.me",
@@ -72,12 +102,20 @@ user_2 = User.create!(
   last_name: "Tenochticlan"
   )
 
+  file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659334/sbud7dyyfajlktc4mitb.jpg")
+  user_8.picture.attach(io: file, filename: "user_8_montezuma.jpeg", content_type: "image/png")
+  user_8.save!
+
   user_9 = User.create!(
   email: "sergio.leone@proton.me",
   password: "24olAEtCQT334Mhj",
   first_name: "Sergio",
   last_name: "Leone"
   )
+
+  file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659356/aj5hjsmjxugpwfwrwkcv.jpg")
+  user_9.picture.attach(io: file, filename: "user_9_sergio.jpeg", content_type: "image/png")
+  user_9.save!
 
   user_10 = User.create!(
     email: "jack.sparrow@proton.me",
@@ -86,8 +124,15 @@ user_2 = User.create!(
     last_name: "Sparrow"
     )
 
+    file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700659368/aiuup3qqc5o7dyepb7xo.jpg")
+    user_10.picture.attach(io: file, filename: "user_10_jack.jpeg", content_type: "image/png")
+    user_10.save!
+
+    puts "users created !"
 
   #TRAVELS#
+
+  puts "creating travels...."
 
 #1 Ancient Egypt
 travel_1 = Travel.create!(
@@ -259,3 +304,54 @@ travel_10 = Travel.create!(
 file = URI.open("http://res.cloudinary.com/dfcjcar1z/image/upload/v1700584507/wcqgzpektgyjkj2tcjx0.png")
 travel_10.picture.attach(io: file, filename: "10_pirate.png", content_type: "image/png")
 travel_10.save!
+
+puts "users created !"
+  #BOOKINGS#
+
+puts "creating bookings..."
+booking_1 = Booking.create!(
+  date_of_beginning: "2023-11-30",
+  date_of_ending: "2023-12-15",
+  status: "pending",
+  number_of_people: 10,
+  user_id: user_2.id,
+  travel_id: travel_1.id
+)
+
+booking_2 = Booking.create!(
+  date_of_beginning: "2023-12-01",
+  date_of_ending: "2023-12-10",
+  status: "pending",
+  number_of_people: 2,
+  user_id: user_2.id,
+  travel_id: travel_3.id
+)
+
+booking_3 = Booking.create!(
+  date_of_beginning: "2023-12-20",
+  date_of_ending: "2023-12-30",
+  status: "pending",
+  number_of_people: 20,
+  user_id: user_3.id,
+  travel_id: travel_1.id
+)
+
+booking_4 = Booking.create!(
+  date_of_beginning: "2023-12-20",
+  date_of_ending: "2023-12-30",
+  status: "pending",
+  number_of_people: 20,
+  user_id: user_1.id,
+  travel_id: travel_2.id
+)
+
+booking_5 = Booking.create!(
+  date_of_beginning: "2023-12-20",
+  date_of_ending: "2023-12-30",
+  status: "pending",
+  number_of_people: 20,
+  user_id: user_1.id,
+  travel_id: travel_3.id
+)
+
+puts "bookings created"

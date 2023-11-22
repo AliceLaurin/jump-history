@@ -13,7 +13,6 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     if @booking.save
       redirect_to dashboard_path
-      # à modifier plus tard
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,7 +31,7 @@ class BookingsController < ApplicationController
 
   private
   def booking_params
-    params.require(:booking).permit(:date_of_beginning, :date_of_ending, :user_id, :travel_id)
+    params.require(:booking).permit(:date_of_beginning, :date_of_ending, :number_of_people, :user_id, :travel_id)
   end
 
   def set_travel

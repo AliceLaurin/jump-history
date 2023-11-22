@@ -15,8 +15,17 @@
 // button index travels
 .btn-card {
   background: #101846;
+  width: 120px;
+  height: 30px;
   color: white;
-  padding: 8px 24px;
+  text-decoration: none;
+  padding: 3px;
   border-radius: 4px;
   transition: background 0.3s ease;
+  text-align: center;
+}
+.btn-card:hover{
+  background: #25DFE9;
+  color: #101846;
+  transform: scale(1.025);
 }

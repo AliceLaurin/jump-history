@@ -1,8 +1,8 @@
-<h1> Bienvenue <%= @user.first_name %> <%= @user.last_name %>  </h1>
+<h1> Welcome <%= @user.first_name %> <%= @user.last_name %>  </h1>
 
 <div class="d-flex flex-column">
   <div>
-    <h2>Mes voyages créés</h2>
+    <h2>My trips</h2>
       <div class="d-flex flex-wrap">
           <% if @travels.length > 0 %>
             <% @travels.each do |travel| %>
@@ -10,23 +10,23 @@
                 <%= cl_image_tag travel.picture.key %>
                 <div class="card-body">
                   <h5 class="card-title"><strong><%= travel.name %></strong></h5>
-                  <%= link_to "Voir le voyage", travel_path(travel) %>
+                  <%= link_to "See the trip", travel_path(travel) %>
                   <% number = travel.bookings.where(status:"pending").all %>
                   <% length = number.length %>
-                  <p class="card-text">Vous avez <strong> <%=length%></strong> demandes de réservation en attente pour ce voyage</p>
+                  <p class="card-text">You have <strong> <%=length%></strong> pending booking requests for this trip</p>
                     <% if travel.bookings.length > 0 %>
                       <% travel.bookings.each do |booking|%>
                         <% if booking.status == "pending" %>
                           <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><%= booking.user.first_name %> <%= booking.user.last_name %>  souhaite booker votre voyage du <%= booking.date_of_beginning %> au <%= booking.date_of_ending %>
+                            <li class="list-group-item"><%= booking.user.first_name %> <%= booking.user.last_name %>  wants to book this trip from <%= booking.date_of_beginning.strftime("%e %B %Y") %> to <%= booking.date_of_ending.strftime("%e %B %Y") %>
                             <%= link_to "Valider la réservation", booking_path(id: booking.id, status: "validated"), data: {turbo_method: :patch} %>
                             <%= link_to "Refuser la réservation", booking_path(id: booking.id, status: "refused"), data: {turbo_method: :patch} %>
                             </li>
                           </ul>
                       <% elsif booking.status == "validated"%>
-                          <p>Réservation confirmée sur ce voyage pour <%= booking.user.first_name %> <%= booking.user.last_name %>  du <%= booking.date_of_beginning.strftime("%e %B %Y") %> au <%= booking.date_of_ending.strftime("%e %B %Y") %></p>
+                          <p>Booking confirmed on this trip for <%= booking.user.first_name %> <%= booking.user.last_name %> from <%= booking.date_of_beginning.strftime("%e %B %Y") %> to <%= booking.date_of_ending.strftime("%e %B %Y") %></p>
                       <% else %>
-                        <p>Réservation refusée sur ce voyage pour <%= booking.user.first_name %> <%= booking.user.last_name %>  du <%= booking.date_of_beginning %> au <%= booking.date_of_ending %></p>
+                        <p>Booking rejected on this trip for <%= booking.user.first_name %> <%= booking.user.last_name %> from <%= booking.date_of_beginning.strftime("%e %B %Y") %> to <%= booking.date_of_ending.strftime("%e %B %Y") %></p>
                       <% end %>
                     <% end %>
                 </div>
@@ -34,13 +34,13 @@
               <% end %>
             <% end %>
           <% else %>
-            <p>Vous n'avez aucun voyage créé</p>
-            <%= link_to "Créer un voyage", new_travel_path, class: "btn btn-flat" %>
+            <p>You have no trip created</p>
+            <%= link_to "Create a trip", new_travel_path, class: "btn btn-flat" %>
           <% end %>
       </div>
   </div>
   <div>
-    <h2>Mes réservations</h2>
+    <h2>My bookings</h2>
       <div class="d-flex flex-wrap">
         <% if @bookings.length > 0 %>
           <% @bookings.each do |booking| %>
@@ -48,23 +48,23 @@
               <%= cl_image_tag booking.travel.picture.key %>
                 <div class="card-body">
                   <h5 class="card-title"><strong><%= booking.travel.name%></strong></h5>
-                  <p> <em>Du <%= booking.date_of_beginning.strftime("%e %B %Y") %> au <%= booking.date_of_ending.strftime("%e %B %Y") %></em></p>
+                  <p> <em>From <%= booking.date_of_beginning.strftime("%e %B %Y") %> to <%= booking.date_of_ending.strftime("%e %B %Y") %></em></p>
                   <%# <p class="card-text"> Nombre de voyageurs : <%= booking.number_of_people %> </p>
-                  <p class="card-text">Statut de la réservation :
+                  <p class="card-text">Booking status :
                     <% if booking.status == "pending" %>
-                      <strong>en attente</strong>
+                      <strong>pending</strong>
                     <% elsif booking.status == "validated" %>
-                      <strong>validée</strong>
+                      <strong>confirmed</strong>
                     <% else %>
-                      <strong>refusée</strong>
+                      <strong>rejected</strong>
                     <% end %></p>
-                  <%= link_to "Voir le voyage", travel_path(booking.travel) %>
+                  <%= link_to "See the trip", travel_path(booking.travel) %>
                 </div>
             </div>
           <% end %>
         <% else %>
-          <p>Vous n'avez aucune réservation en cours</p>
-          <%= link_to "Réserver un nouveau voyage", travels_path, class: "btn btn-flat" %>
+          <p>You have no booking</p>
+          <%= link_to "Book a new trip", travels_path, class: "btn btn-flat" %>
         <% end %>
       </div>
   </div>
