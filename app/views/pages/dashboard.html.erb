@@ -1,4 +1,4 @@
-<h1> Le dashboard de <%= @user.first_name %> <%= @user.last_name %>  </h1>
+<h1> Bienvenue <%= @user.first_name %> <%= @user.last_name %>  </h1>
 
 <div class="d-flex flex-column">
   <div>
@@ -33,6 +33,7 @@
             <% end %>
           <% else %>
             <p>Vous n'avez aucun voyage créé</p>
+            <%= link_to "Créer un voyage", new_travel_path, class: "btn btn-flat" %>
           <% end %>
       </div>
   </div>
@@ -61,6 +62,7 @@
           <% end %>
         <% else %>
           <p>Vous n'avez aucune réservation en cours</p>
+          <%= link_to "Réserver un nouveau voyage", travels_path, class: "btn btn-flat" %>
         <% end %>
       </div>
   </div>
