@@ -1,0 +1,56 @@
+.container-show-description {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container-show-description img {
+  object-fit: cover;
+  image-rendering: auto;
+  width: 700px;
+  height: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-travel{
+  width: 700px;
+}
+
+.card-travel li{
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.card-travel-picto{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card-travel-formulaire{
+  width: 600px;
+  height: 400px;
+  position: sticky;
+  top: 100px;
+  background-color: white;
+  color: #101846;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.card-travel-formulaire input{
+  opacity: 0.5;
+  // background: hsla(231, 63%, 17%, 1);
+  // background: -moz-linear-gradient(180deg, hsla(231, 63%, 17%, 1) 10%, hsla(238, 70%, 48%, 1) 100%);
+  // background: -webkit-linear-gradient(180deg, hsla(231, 63%, 17%, 1) 10%, hsla(238, 70%, 48%, 1) 100%);
+  // filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#101846", endColorstr="#242ACF", GradientType=1 );
+}
+
+.card-travel-formulaire input[type=submit]{
+  background: #101846;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  opacity: 1;
+  transition: background 0.2s ease;
+}
