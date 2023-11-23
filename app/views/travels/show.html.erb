@@ -73,11 +73,10 @@
         <% else %>
         <% rejected_bookings = bookings.where(status: "rejected") %>
           <% if rejected_bookings.empty? %>
-            <p>Sorry, you <strong>already have a booking</strong> for this trip.</p>
-            <p>Details of your booking : </p>
+            <p>You <strong>already have a booking</strong> <br>for this trip.</p>
             <ul>
-              <li>Dates : from <%= bookings.first.date_of_beginning.strftime("%e %B %Y") %> to <%= bookings.first.date_of_ending.strftime("%e %B %Y") %> </li>
-              <li>Status : <strong><%= bookings.first.status %></strong></li>
+              <li> <strong>Dates : </strong> <em>from <%= bookings.first.date_of_beginning.strftime("%e %B %Y") %> to <%= bookings.first.date_of_ending.strftime("%e %B %Y") %> </em></li>
+              <li> <strong>Status : </strong><em><%= bookings.first.status %></em> </li>
             </ul>
 
           <% else %>
