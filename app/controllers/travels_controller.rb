@@ -3,7 +3,15 @@ class TravelsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
 
   def index
-    @travels = Travel.all
+    if params[:query].present?
+      @travels = Travel.search_by_name_and_description_and_period_and_address(params[:query])
+    else
+      @travels = Travel.all
+    end
+    respond_to do |format|
+      format.html
+      format.text { render partial: "travels/list", locals: { travels: @travels }, formats: [:html] }
+    end
   end
 
   def new
