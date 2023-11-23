@@ -1,4 +1,12 @@
-<h1>Créer un nouveau voyage dans le temps</h1>
+<div class="forms">
+  <div class="background_log">
+    <div class="shape_2 mt-4"></div>
+    <div class="shape_2 mt-4"></div>
+</div>
+<div class="formulaire_3 mt-4">
+  <h3>Create a new trip</h3>
+
+<div id="label_login">
 
 <%= simple_form_for(@travel) do |f| %>
     <%= f.input :name %>
@@ -11,5 +19,9 @@
     <%= f.input :price %>
     <%= f.input :duration %>
     <%= f.input :number_of_travelers %>
-    <%= f.submit%>
+    <%= f.button :submit, "Create", class:"btn-flat-navbar"%>
   <% end %>
+</div>
+</div>
+
+</div>

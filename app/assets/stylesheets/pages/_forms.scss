@@ -8,19 +8,26 @@
 .black_fond{
     background-color: #101846;;
 }
-.background{
+.background_log{
     width: 430px;
     height: 520px;
-    position: absolute;
     transform: translate(-50%,-50%);
+    position: absolute;
     left: 50%;
     top: 50%;
 }
-.background .shape{
+.background_log .shape{
     height: 200px;
     width: 200px;
     position: absolute;
     border-radius: 50%;
+}
+
+.background_log .shape_2{
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
 }
 .shape:first-child{
     background: linear-gradient(
@@ -36,16 +43,35 @@
         #ff512f,
         #f09819
     );
-    right: -30px;
+    right: -0px;
     bottom: -80px;
 }
+
+.shape_2:first-child{
+  background: linear-gradient(
+      #25dfe9,
+      #85d3d7,
+  );
+  left: -200px;
+  top: -80px;
+}
+.shape_2:last-child{
+  background: linear-gradient(
+      to right,
+      #ff512f,
+      #f09819
+  );
+  right: -170px;
+  bottom: -80px;
+}
+
 .formulaire{
-    height: 520px;
+    height: 570px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
-    position: absolute;
     transform: translate(-50%,-50%);
-    top: 50%;
+    position: absolute;
+    top: 55%;
     left: 50%;
     border-radius: 10px;
     backdrop-filter: blur(10px);
@@ -55,7 +81,6 @@
 }
 .formulaire *{
     font-family: 'Roboto';
-    color: #ffffff;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
@@ -65,13 +90,15 @@
     font-weight: 500;
     line-height: 42px;
     text-align: center;
+    color:white;
 }
 
-label{
+#label_login{
     display: block;
     margin-top: 30px;
     font-size: 16px;
     font-weight: 500;
+    color:white !important;
 }
 input{
     display: block;
@@ -83,9 +110,10 @@ input{
     margin-top: 8px;
     font-size: 14px;
     font-weight: 300;
+    color:black;
 }
 ::placeholder{
-    color: #e5e5e5;
+    color: black;
 }
 button{
     margin-top: 50px;
@@ -98,28 +126,7 @@ button{
     border-radius: 5px;
     cursor: pointer;
 }
-.social{
-  margin-top: 30px;
-  display: flex;
-}
-.social div{
-  background: red;
-  width: 150px;
-  border-radius: 3px;
-  padding: 5px 10px 10px 5px;
-  background-color: rgba(255,255,255,0.27);
-  color: #eaf0fb;
-  text-align: center;
-}
-.social div:hover{
-  background-color: rgba(255,255,255,0.47);
-}
-.social .fb{
-  margin-left: 25px;
-}
-.social i{
-  margin-right: 4px;
-}
+
 
 .formulaire_2{
   height: 930px;
@@ -137,8 +144,7 @@ button{
 }
 
 .formulaire_2 *{
-  font-family: 'Roboto';
-  color: #ffffff;
+  font-family: nunito;
   letter-spacing: 0.5px;
   outline: none;
   border: none;
@@ -148,4 +154,63 @@ button{
   font-weight: 500;
   line-height: 42px;
   text-align: center;
+  color:white;
+}
+
+.formulaire_2 a{
+  color:white;
+  font-size: 16px;
+
+}
+
+.formulaire a{
+  color:white;
+  font-size: 16px;
+
+}
+
+
+.formulaire_3{
+  height: 1300px;
+  width: 600px;
+  background-color: rgba(255,255,255,0.13);
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 115%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,0.1);
+  box-shadow: 0 0 40px rgba(8,7,16,0.6);
+  padding: 50px 35px;
+}
+
+.formulaire_3 *{
+  font-family: nunito;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+.formulaire_3 h3{
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+  color:white;
+}
+
+.formulaire_3 a{
+  color:white;
+  font-size: 16px;
+
+}
+
+.formulaire a{
+  color:white;
+  font-size: 16px;
+
+}
+
+.forms{
+  min-height: 200vh;
 }
