@@ -1,4 +1,11 @@
 class Travel < ApplicationRecord
+  # SEARCH
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_description_and_period_and_address,
+    against: [ :name, :description, :period, :address ],
+    using: {
+      tsearch: { prefix: true }
+    }
   validates :perilousness, presence: true, inclusion: { in: 0..10}
   validates :name, presence: true
   validates :address, presence: true
