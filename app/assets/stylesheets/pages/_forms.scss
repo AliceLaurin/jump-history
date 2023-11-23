@@ -16,6 +16,7 @@
     left: 50%;
     top: 50%;
 }
+
 .background_log .shape{
     height: 200px;
     width: 200px;
@@ -24,6 +25,13 @@
 }
 
 .background_log .shape_2{
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.background_log .shape_3{
   height: 200px;
   width: 200px;
   position: absolute;
@@ -43,8 +51,8 @@
         #ff512f,
         #f09819
     );
-    right: -0px;
-    bottom: -80px;
+    right: -100px;
+    bottom: -100px;
 }
 
 .shape_2:first-child{
@@ -65,6 +73,25 @@
   bottom: -80px;
 }
 
+.shape_3:first-child{
+  background: linear-gradient(
+      #25dfe9,
+      #85d3d7,
+  );
+  left: 700px;
+  top: 0px;
+}
+.shape_3:last-child{
+  background: linear-gradient(
+      to right,
+      #ff512f,
+      #f09819
+  );
+  right: -100px;
+  bottom: -180px;
+}
+
+
 .formulaire{
     height: 570px;
     width: 400px;
@@ -80,20 +107,22 @@
     padding: 50px 35px;
 }
 .formulaire *{
-    font-family: 'Roboto';
+    font-family: nunito;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
 }
 .formulaire h3{
-    font-size: 32px;
+    font-size: 40px;
+    font-family: impact;
     font-weight: 500;
     line-height: 42px;
     text-align: center;
     color:white;
+    letter-spacing: 0.1em;
 }
 
-#label_login{
+label{
     display: block;
     margin-top: 30px;
     font-size: 16px;
@@ -150,11 +179,13 @@ button{
   border: none;
 }
 .formulaire_2 h3{
-  font-size: 32px;
+  font-size: 40px;
+  font-family: impact;
   font-weight: 500;
   line-height: 42px;
   text-align: center;
   color:white;
+  letter-spacing: 0.1em;
 }
 
 .formulaire_2 a{
@@ -192,11 +223,13 @@ button{
   border: none;
 }
 .formulaire_3 h3{
-  font-size: 32px;
+  font-size: 40px;
+  font-family: impact;
   font-weight: 500;
   line-height: 42px;
   text-align: center;
   color:white;
+  letter-spacing: 0.1em;
 }
 
 .formulaire_3 a{
