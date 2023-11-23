@@ -5,9 +5,8 @@
 }
 
 #container-travels-index img{
-  width: 100%;
+  size: cover;
   object-fit: cover;
-  image-rendering: auto;
 }
 
 #container-travels-index{
@@ -24,6 +23,7 @@
   display: flex;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);    /* Light shadow */
 }
+
 
 #index-background {
   background-color: #101846;
@@ -53,4 +53,27 @@
 .cadrage{
   display: flex;
   justify-content: center;
+}
+
+.form-control{
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.btn-flat-search{
+  margin-left: 15px;
+  padding: 0;
+  border: none;
+  background: none;
+  &:hover{
+    transform: scale(1.5);
+  }
+}
+
+#magnifying-glass{
+  height: 20px;
+}
+
+.search-form{
+  width: 255px;
 }
