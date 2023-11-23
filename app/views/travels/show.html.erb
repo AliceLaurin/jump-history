@@ -1,6 +1,9 @@
 <div class = "container-show">
   <div class="container-show-description">
     <div class="card-travel">
+      <div class = "img-card">
+      <%= cl_image_tag @travel.picture.key, class:"rounded" %>
+      </div>
       <h1> <%= @travel.name %> </h1>
       <h4><%= @travel.description %></h4>
       <div class = "card-travel-picto">
@@ -19,7 +22,7 @@
           </ul>
         </div>
       </div>
-      <%= cl_image_tag @travel.picture.key, class:"rounded" %>
+
     </div>
     <div class ="card-travel-formulaire">
      <% if @travel.user != current_user %>
@@ -65,10 +68,11 @@
         <% end %>
 
       <% else %>
-        Log in or Sign up to book this trip
-        <%= link_to "Log in", new_user_session_path%>
-        <%= link_to "Sign up", new_user_registration_path%>
+      <div class= "link-formulaire">
+        <%= link_to "Log in", new_user_session_path%> or <%= link_to "Sign up", new_user_registration_path%>
+      </div>
       <% end %>
+
     </div>
     <% end %>
   </div>
