@@ -1,4 +1,13 @@
-<h2>Sign up</h2>
+
+
+<body class="black_fond">
+
+<div class="background">
+    <div class="shape mt-4"></div>
+    <div class="shape mt-4"></div>
+</div>
+<div class="formulaire_2 mt-4">
+  <h3>Sign up</h3>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
@@ -17,17 +26,20 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%="Click to upload your profile picture"%>
+    <%= f.label :picture %>
+    <%= f.file_field :picture %>
   </div>
 
-<div class= "upload-picture">
-  <%="Click to upload your profile picture"%>
-  <%= f.label :picture %>
-  <%= f.file_field :picture %>
-</div>
+
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", class:"btn-flat" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
+
+</body>
