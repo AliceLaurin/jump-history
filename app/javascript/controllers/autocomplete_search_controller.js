@@ -17,7 +17,7 @@ export default class extends Controller {
       .then(response => response.text())
       .then((data) => {
         console.log(data);
-        this.listTarget.innerHTML = data
+        this.listTarget.outerHTML = data
       })
   }
 }

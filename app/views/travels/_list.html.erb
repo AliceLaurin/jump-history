@@ -4,7 +4,8 @@
           <%= link_to travel_path(travel) do %>
             <%= cl_image_tag travel.picture.key, class: "card-img-top" %>
             <div class="card-body">
-              <h5 class="card-title"><%= travel.name %></h5>
+              <h3 class="card-title"><%= travel.name %></h3>
+              <br>
               <p class="card-text"><%= travel.description %></p>
             </div>
             <div class="card-details">
