@@ -2,7 +2,7 @@
       <% @travels.each do |travel| %>
         <div class="card col-3 p-3 mb-2 sh">
           <%= link_to travel_path(travel) do %>
-            <%= cl_image_tag travel.picture.key, class: "card-img-top" %>
+            <%= cl_image_tag travel.picture.key, class: "card-img-top",opacity: 70 %>
             <div class="card-body">
               <h3 class="card-title"><%= travel.name %></h3>
               <br>
