@@ -1,4 +1,62 @@
-.main_container{
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
-  font-family: 'DM Serif Display', serif;
+.main_container-dashboard{
+  background-color: #101846;
+  font-family: 'roboto';
+  color: white;
+}
+.dashboard-trips{
+  width: 100%;
+  height: 830px;
+  background-color: #101846;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+}
+.dashboard-trips-description img{
+  width: 250px;
+}
+
+.dashboard-booking{
+  width: 100%;
+  height: 528px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+}
+.dashboard-booking h2{
+  display: block;
+  margin-bottom: 30px;
+}
+.dashboard-booking-description {
+  background-color: white;
+  color: #101846;
+  border-radius: 20px;
+  padding: 15px;
+}
+.dashboard-trips-description {
+  background-color: white;
+  color: #101846;
+  border-radius: 20px;
+  padding: 15px;
+}
+.dashboard-booking-description img{
+  width: 200px;
+}
+
+.dashboard-booking-description-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);    /* Light shadow */
+  width: 300px;
+  padding: 12px;
+  margin: -4px;
+}
+
+.dashboard-trips-description-card {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);    /* Light shadow */
+  width: 300px;
+  padding: 15px;
+  height: 500px;
+}
+
+general-booking{
+  background-color:#101846;
 }
