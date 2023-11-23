@@ -2,32 +2,36 @@
 <div id="index-background" class="container">
   <div id="card-trip-container" class="row nowrap">
     <% @travels.each do |travel| %>
-    <div class="card col-3 p-3 mb-2 sh">
-      <%= cl_image_tag travel.picture.key, class: "card-img-top" %>
-      <div class="card-body">
-        <h5 class="card-title"><%= travel.name %></h5>
-        <p class="card-text"><%= travel.description %></p>
-      </div>
-      <div class="card-details">
-        <div class="card-first-serie">
-          <ul>
-            <li> <i class="fa-solid fa-coins"></i> <%= travel.price %>€</li>
-            <li> <i class="fa-solid fa-skull-crossbones"></i> <%= travel.perilousness %>/10 </li>
-            <li> <i class="fa-solid fa-person"></i> <%= travel.number_of_travelers %></li>
-          </ul>
+      <div class="card col-3 p-3 mb-2 sh">
+        <%= link_to travel_path(travel) do %>
+        <%= cl_image_tag travel.picture.key, class: "card-img-top" %>
+        <div class="card-body">
+          <h5 class="card-title"><%= travel.name %></h5>
+          <p class="card-text"><%= travel.description %></p>
         </div>
-        <div class="card-second-serie">
-          <ul>
-            <li><i class="fa-solid fa-timeline"></i> <%= travel.period %></li>
-            <li> <i class="fa-solid fa-map-location-dot"></i> <%= travel.address %></li>
-            <li> <i class="fa-regular fa-clock"></i> <%= travel.duration %> days </li>
-          </ul>
+        <div class="card-details">
+          <div class="card-first-serie">
+            <ul>
+              <li> <i class="fa-solid fa-coins"></i> <%= travel.price %>€</li>
+              <li> <i class="fa-solid fa-skull-crossbones"></i> <%= travel.perilousness %>/10 </li>
+              <li> <i class="fa-solid fa-person"></i> <%= travel.number_of_travelers %></li>
+            </ul>
+          </div>
+          <div class="card-second-serie">
+            <ul>
+              <li><i class="fa-solid fa-timeline"></i> <%= travel.period %></li>
+              <li> <i class="fa-solid fa-map-location-dot"></i> <%= travel.address %></li>
+              <li> <i class="fa-regular fa-clock"></i> <%= travel.duration %> days </li>
+            </ul>
+          </div>
+        </div>
+        <div class = "cadrage">
+        <% if travel.user != current_user %>
+        <%= link_to "Book",  travel_path(travel), class: "btn-card"%>
+        <% end %>
         </div>
       </div>
-      <div class = "cadrage">
-      <%= link_to "Book",  travel_path(travel), class: "btn-card"%>
-      </div>
-    </div>
-    <% end %>
+      <% end %>
+      <% end %>
   </div>
 </div>

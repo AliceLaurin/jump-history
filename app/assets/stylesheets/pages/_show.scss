@@ -1,0 +1,84 @@
+.container-show-description {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  font-family: 'Roboto', sans-serif;
+  max-width: 100%;
+  background-color: white;
+}
+
+.container-show-description img {
+  object-fit: cover;
+  width: 700px;
+  height: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  justify-content: center;
+}
+
+.img-card{
+  display: flex;
+  justify-content: center;
+}
+.card-travel{
+  width: 700px;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.17);
+}
+.card-travel h1, h4{
+  margin: 10px;
+}
+
+.card-travel li{
+  list-style-type: none;
+  font-size: 20px;
+}
+
+.card-travel-picto{
+  display: flex;
+  justify-content: center;
+  padding-right: 74px;
+}
+
+.card-travel-formulaire{
+  width: 600px;
+  height: 400px;
+  position: sticky;
+  top: 100px;
+  background-color: white;
+  color: #101846;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.card-travel-formulaire input{
+  opacity: 0.5;
+  // background: hsla(231, 63%, 17%, 1);
+  // background: -moz-linear-gradient(180deg, hsla(231, 63%, 17%, 1) 10%, hsla(238, 70%, 48%, 1) 100%);
+  // background: -webkit-linear-gradient(180deg, hsla(231, 63%, 17%, 1) 10%, hsla(238, 70%, 48%, 1) 100%);
+  // filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#101846", endColorstr="#242ACF", GradientType=1 );
+}
+
+.card-travel-formulaire input[type=submit]{
+  background: #101846;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  opacity: 1;
+  transition: background 0.2s ease;
+}
+
+.card-travel-formulaire a {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #101846;
+  margin: 10px;
+}
+
+.link-formulaire {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 69px
+}
