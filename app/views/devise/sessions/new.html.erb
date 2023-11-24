@@ -1,11 +1,13 @@
-<div class="background_log">
+<div class="forms_1">
+  <div class="background_log">
     <div class="shape mt-4"></div>
     <div class="shape mt-4"></div>
 </div>
 <div class="formulaire mt-4">
   <h3>LOGIN</h3>
 
-<div>
+<div id="label_login">
+
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
@@ -23,5 +25,7 @@
 <% end %>
 <br>
 <%= render "devise/shared/links" %>
+</div>
+</div>
 
 </div>

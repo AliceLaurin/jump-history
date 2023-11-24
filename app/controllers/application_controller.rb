@@ -12,9 +12,13 @@ class ApplicationController < ActionController::Base
 
 
   def after_sign_in_path_for(resource)
-    dashboard_path(current_user) # your path
+    if request.referer.include?("id")
+      id = request.referer.match(/id=(\d*)/)[1].to_i
+      travel_path(id)
+    else
+      dashboard_path(current_user) # your path
+    end
     # redirect_to request.referer
   end
 
 end
-

@@ -202,7 +202,7 @@ button{
 
 
 .formulaire_3{
-  height: 1300px;
+  height: 1250px;
   width: 600px;
   background-color: rgba(255,255,255,0.13);
   position: absolute;
@@ -244,6 +244,20 @@ button{
 
 }
 
+.small_p{
+  font-size: 14px;
+  font-weight: 500;
+
+}
+
 .forms{
   min-height: 200vh;
+}
+
+.forms_1{
+  min-height: 100vh;
+}
+
+.forms_2{
+  min-height: 140vh;
 }
