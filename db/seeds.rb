@@ -344,7 +344,7 @@ travel_11 = Travel.create!(
   address: "Stade de France - Paris",
   period: "08/12 1998",
   perilousness: 0,
-  description: " 'Zizou president' do you rememeber it ? Have you ever got the thrill of celebrating the most pretigious sport victory in the most beautifull city in the world ? Get ready is relive the famous french team victory of july 1998 againt Brazil. Including fist class seats at Stade de France and Arc de Triomphe crowd celebration",
+  description: " 'Zizou president' do you remember it ? Have you ever got the thrill of celebrating the most pretigious sport victory in the most beautifull city in the world ? Get ready is relive the famous french team victory of july 1998 againt Brazil. Including fist class seats at Stade de France and Arc de Triomphe crowd celebration",
   price: 5500,
   duration: 2,
   number_of_travelers: 2,
@@ -374,7 +374,7 @@ travel_12 = Travel.create!(
 
 #13 Johnny 1993
 travel_13 = Travel.create!(
-  name: "Johnny Parc des Pricnes 1993",
+  name: "Johnny Parc des Princes 1993",
   address: "Paris - France",
   period: "June 1993",
   perilousness: 0,
