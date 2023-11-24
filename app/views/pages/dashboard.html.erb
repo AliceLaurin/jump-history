@@ -9,7 +9,7 @@
       <div class = "dashboard-trips-description">
           <div class= "dashboard-trips-description-card">
               <%= cl_image_tag travel.picture.key %>
-                <h5 class="card-title"><strong><%= travel.name %></strong></h5>
+                <h5 class="card-title"><strong><%= travel.name.upcase %></strong></h5>
                 <%= link_to "See the trip", travel_path(travel) %>
                 <% number = travel.bookings.where(status:"pending").all %>
                 <% length = number.length %>
@@ -21,8 +21,8 @@
                         <ul class="list-group list-group-flush">
                           <li class="list-group-item"><%= booking.user.first_name %> <%= booking.user.last_name %>  wants to book this trip from <%= booking.date_of_beginning.strftime("%e %B %Y") %> to <%= booking.date_of_ending.strftime("%e %B %Y") %>
                           <div id = "link-dashboard">
-                            <%= link_to "Accept the booking", booking_path(id: booking.id, status: "validated"), data: {turbo_method: :patch} %>
-                            <%= link_to "Refuse the booking", booking_path(id: booking.id, status: "refused"), data: {turbo_method: :patch} %>
+                            <%= link_to "Accept ", booking_path(id: booking.id, status: "validated"), data: {turbo_method: :patch} %>
+                            <%= link_to "Refuse ", booking_path(id: booking.id, status: "refused"), data: {turbo_method: :patch} %>
                           </div>
                           </li>
                         </ul>
