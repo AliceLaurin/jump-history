@@ -52,7 +52,7 @@
 </div> %>
     </div>
     <div class ="card-travel-formulaire">
-     <% if @travel.user != current_user %>
+    <% if @travel.user != current_user %>
       <h3>BOOK</h3>
 
       <% if user_signed_in? %>
@@ -67,7 +67,7 @@
                           as: :string,
                           input_html: { data: { controller: "datepicker" } } %>
               <%= f.input :number_of_people %>
-              <%= f.button :submit, "Book", class:"btn-flat-navbar"%>
+              <%= f.button :submit, "Book", class:"btn-flat"%>
               <% end %>
 
         <% else %>
@@ -95,7 +95,7 @@
 
       <% else %>
       <div class= "link-formulaire">
-        <%= link_to "Log in", new_user_session_path(id: params[:id]), class:"btn-flat-navbar"%> <p>or</p> <%= link_to "Sign up", new_user_registration_path, class:"btn-flat-navbar"%>
+        <%= link_to "Log in", new_user_session_path(id: params[:id]), class:"btn-flat"%> <p>or</p> <%= link_to "Sign up", new_user_registration_path, class:"btn-flat"%>
       </div>
       <% end %>
     </div>
