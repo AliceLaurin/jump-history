@@ -1,11 +1,15 @@
 .main_container-dashboard{
   background-color: #101846;
-  font-family: nunito;
   color: white;
+  padding: 40px;
 }
 .main_container-dashboard h1{
   text-align: center;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: 0;
+  color: #FFF4D7;
+  font-size: 80px;
+  line-height: 2em;
+  letter-spacing: 0.1em;
 }
 //.dashboard-trips{
 /*   width: 100%;
@@ -112,14 +116,14 @@
   background-color:#101846;
   color: white;
 }
-.dashboard-trips-description-card a{
-  color: white;
-  padding: 8px 24px;
-  border-radius: 4px;
-  margin-bottom: 5px;
-  background: #101846;
-  transition: background 0.1s ease;
-}
+// .dashboard-trips-description-card a{
+//   color: white;
+//   padding: 8px 24px;
+//   border-radius: 4px;
+//   margin-bottom: 5px;
+//   background: #101846;
+//   transition: background 0.1s ease;
+// }
 
 // .dashboard-trips-description-card h5{
 //   font-family: nunito;
@@ -133,23 +137,23 @@
   color:#101846;
   letter-spacing: 0.1em;
 }
-#btn-booking-link {
-  color: white;
-  width: 129px;
-  height: 40px;
-  padding: 8px;
-  text-align: center;
-  border-radius: 4px;
-  margin-bottom: 5px;
-  background: #101846;
-  transition: background 0.1s ease;
-  margin-left: auto;
-  margin-right: auto;
-}
+// #btn-booking-link {
+//   color: white;
+//   width: 129px;
+//   height: 40px;
+//   padding: 8px;
+//   text-align: center;
+//   border-radius: 4px;
+//   margin-bottom: 5px;
+//   background: #101846;
+//   transition: background 0.1s ease;
+//   margin-left: auto;
+//   margin-right: auto;
+// }
 
-#btn-booking-link a{
-  color: white;
- }
+// #btn-booking-link a{
+//   color: white;
+//  }
 
 // #link-dashboard a{
 //   color: white;
@@ -180,4 +184,12 @@
 }
 .no-trip p a{
   margin-left: 50px;
+}
+
+.a-souligne{
+  text-decoration: none;
+  color:#101846;
+  text-decoration: underline;
+  font-weight: bold;
+  font-family: impact;
 }
