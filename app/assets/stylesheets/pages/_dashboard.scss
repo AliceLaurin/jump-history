@@ -3,60 +3,159 @@
   font-family: 'roboto';
   color: white;
 }
-.dashboard-trips{
-  width: 100%;
-  height: 830px;
-  background-color: #101846;
+.main_container-dashboard h1{
+  text-align: center;
+}
+//.dashboard-trips{
+/*   width: 100%;
+  height: fit-content;
   border-radius: 10px;
-  padding: 15px;
+  padding: 13px;
   display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+} */
+
+.dashboard-trips {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-bottom: 25px;
 }
 .dashboard-trips-description img{
   width: 250px;
 }
 
-.dashboard-booking{
-  width: 100%;
-  height: 528px;
-  background-color: white;
-  border-radius: 10px;
-  padding: 15px;
-  display: flex;
+// .dashboard-booking{
+//   width: 100%;
+//   height: fit-content;
+//   border-radius: 10px;
+//   padding: 13px;
+//   display: flex;
+//   justify-content: space-evenly;
+//   flex-direction: row;
+// }
+.dashboard-booking {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-bottom: 25px;
+  background-color: #101846;
 }
 .dashboard-booking h2{
   display: block;
   margin-bottom: 30px;
+  height: fit-content;
+
+}
+.card-text{
+  margin-top: 20px;
+  height: auto;
+  text-align: center;
 }
 .dashboard-booking-description {
   background-color: white;
   color: #101846;
-  border-radius: 20px;
-  padding: 15px;
+  border-radius: 5px;
+  height: fit-content;
+  width: 304px;
+  margin-top: 15px;
 }
 .dashboard-trips-description {
   background-color: white;
   color: #101846;
-  border-radius: 20px;
-  padding: 15px;
+  border-radius: 5px;
+  height: fit-content;
+  margin-top: 15px;
 }
 .dashboard-booking-description img{
-  width: 200px;
+  width: 250px;
 }
-
+.container-list{
+  display: flex;
+  flex-wrap: wrap;
+}
 .dashboard-booking-description-card {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);    /* Light shadow */
-  width: 300px;
-  padding: 12px;
-  margin: -4px;
+  width: 307px;
+  margin-top: 14px;
+  padding: 5px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  height: fit-content;
+  width: fit-content;
+  align-items: center;
+  text-align: center;
 }
-
+.dashboard-booking-description-card p{
+  color: #101846;
+  font-size: 18px;
+}
+.dashboard-booking-description-card h5{
+  margin-top: 15px;
+}
 .dashboard-trips-description-card {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);    /* Light shadow */
-  width: 300px;
+  width: fit-content;
   padding: 15px;
-  height: 500px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-general-booking{
+.general-booking h2{
   background-color:#101846;
+  color: white;
+}
+.dashboard-trips-description-card a{
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  background: #101846;
+  transition: background 0.1s ease;
+}
+
+#btn-booking-link {
+  color: white;
+  width: 129px;
+  height: 40px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 4px;
+  margin-bottom: 5px;
+  background: #101846;
+  transition: background 0.1s ease;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#btn-booking-link a{
+  color: white;
+}
+
+#link-dashboard a{
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #101846;
+  transition: background 0.1s ease;
+  font-size: 10px;
+}
+
+.list-group-flush > .list-group-item:last-child {
+  margin:2px;
+  width: 324px;
+  background-color: white;
+}
+
+.no-trip {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.no-trip p a{
+  margin-left: 50px;
 }
