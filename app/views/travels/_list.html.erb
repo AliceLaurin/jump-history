@@ -1,8 +1,10 @@
-  <div id="card-trip-container" class="row nowrap" data-autocomplete-search-target = "list">
+  <div id="card-trip-container" data-autocomplete-search-target = "list">
       <% @travels.each do |travel| %>
-        <div class="card col-3 p-3 mb-2 sh">
+        <div class="card">
           <%= link_to travel_path(travel) do %>
+          <div class="container-image">
             <%= cl_image_tag travel.picture.key, class: "card-img-top",opacity: 70 %>
+          </div>
             <div class="card-body">
               <h3 class="card-title"><%= travel.name.upcase %></h3>
               <br>
@@ -26,7 +28,7 @@
             </div>
             <div class = "cadrage">
               <% if travel.user != current_user %>
-                <%= link_to "Book",  travel_path(travel), class: "btn-card"%>
+                <%= link_to "Book this trip",  travel_path(travel), class: "btn btn-card"%>
               <% end %>
             </div>
           <% end %>
