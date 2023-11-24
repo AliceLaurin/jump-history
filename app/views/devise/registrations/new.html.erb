@@ -1,11 +1,14 @@
-<div class="background_log">
+
+<div class="forms_2">
+  <div class="background_log">
     <div class="shape mt-4"></div>
     <div class="shape mt-4"></div>
 </div>
 <div class="formulaire_2 mt-4">
   <h3>SIGN UP</h3>
 
-<div>
+<div id="label_login">
+
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
@@ -34,5 +37,7 @@
 <% end %>
 <br>
 <%= render "devise/shared/links" %>
+</div>
+</div>
 
 </div>
