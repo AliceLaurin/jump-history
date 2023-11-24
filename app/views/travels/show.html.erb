@@ -95,7 +95,7 @@
 
       <% else %>
       <div class= "link-formulaire">
-        <%= link_to "Log in", new_user_session_path(id: params[:id]), class:"btn-flat"%> <p>or</p> <%= link_to "Sign up", new_user_registration_path, class:"btn-flat"%>
+        <%= link_to "Log in", new_user_session_path(id: params[:id]), class:"btn-flat"%> <p>or</p> <%= link_to "Sign up", new_user_registration_path(id: params[:id]), class:"btn-flat"%>
       </div>
       <% end %>
     </div>
