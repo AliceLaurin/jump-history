@@ -8,4 +8,8 @@ class PagesController < ApplicationController
     @bookings = @user.bookings
     @travels = @user.travels
   end
+
+  def about
+  end
+  
 end
